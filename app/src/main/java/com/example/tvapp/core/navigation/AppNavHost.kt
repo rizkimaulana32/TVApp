@@ -5,6 +5,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.example.tvapp.presentation.screen.list.ListScreen
 
 @Composable
 fun AppNavHost(
@@ -14,8 +15,14 @@ fun AppNavHost(
         navController = navController,
         startDestination = Screen.List
     ) {
-        composable<Screen.List>{
-
+        composable<Screen.List> {
+            ListScreen(
+                onTVShowClick = {
+                    navController.navigate(
+                        Screen.Detail(it)
+                    )
+                }
+            )
         }
 
         composable<Screen.Detail>{
