@@ -80,4 +80,9 @@ dependencies {
     // coil
     implementation("io.coil-kt.coil3:coil-compose:3.6.2")
     implementation("io.coil-kt.coil3:coil-network-okhttp:3.6.2")
+
+    //test
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0")
+    testImplementation("org.mockito:mockito-core:5.23.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:6.3.0")
 }
