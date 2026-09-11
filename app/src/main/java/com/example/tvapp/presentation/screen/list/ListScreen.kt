@@ -34,7 +34,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import coil3.compose.AsyncImage
+import coil3.compose.SubcomposeAsyncImage
 import com.example.tvapp.domain.models.TVShow
 
 
@@ -115,11 +115,14 @@ private fun TVShowItem(
         Box(
             modifier = Modifier.fillMaxSize()
         ) {
-            AsyncImage(
+            SubcomposeAsyncImage(
                 model = tvShow.posterMedium,
                 contentDescription = tvShow.title,
                 modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.Crop
+                contentScale = ContentScale.Crop,
+                error = {
+                    ImagePlaceholder()
+                }
             )
 
             Box(
@@ -191,3 +194,12 @@ fun ErrorContent(
     }
 }
 
+@Composable
+fun ImagePlaceholder(
+    modifier: Modifier = Modifier
+) {
+    Box(
+        modifier = modifier
+            .background(Color.DarkGray)
+    )
+}

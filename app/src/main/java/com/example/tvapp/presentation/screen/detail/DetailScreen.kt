@@ -31,12 +31,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import coil3.compose.AsyncImage
 import com.example.tvapp.domain.models.TVShowDetail
 import com.example.tvapp.presentation.screen.list.ErrorContent
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.fromHtml
+import coil3.compose.SubcomposeAsyncImage
 import com.example.tvapp.core.commons.Utils.formatPremiereDate
+import com.example.tvapp.presentation.screen.list.ImagePlaceholder
 
 @Composable
 fun DetailScreen(
@@ -88,11 +89,14 @@ private fun DetailContent(
             .padding(12.dp)
             .clip(RoundedCornerShape(24.dp))
     ) {
-        AsyncImage(
+        SubcomposeAsyncImage(
             model = tvShow.posterOriginal,
             contentDescription = tvShow.title,
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop,
+            error = {
+                ImagePlaceholder()
+            }
         )
 
         Box(
