@@ -1,6 +1,9 @@
 ### Link Video: 
 https://www.loom.com/share/aeb2376b613f49a0afd13a88c02d55d3
 
+### CV
+https://drive.google.com/file/d/1ZJHWr1JDGsXj1qVgSGcT7ApJnD060HMg/view?usp=sharing
+
 ### Build Configuration
 
 - Android Gradle Plugin: 9.2.1
