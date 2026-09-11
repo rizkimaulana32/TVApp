@@ -6,4 +6,5 @@ data class TVShowDetail(
     val title: String?,
     val summary: String?,
     val premiereDate: String?,
+    val url: String?
 )

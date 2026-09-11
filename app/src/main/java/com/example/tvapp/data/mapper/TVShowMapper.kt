@@ -22,7 +22,8 @@ object TVShowMapper {
             posterOriginal = image?.original,
             title = name,
             summary = summary,
-            premiereDate = premiered
+            premiereDate = premiered,
+            url = url
         )
     }
 }
